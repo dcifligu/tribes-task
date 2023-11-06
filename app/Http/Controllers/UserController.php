@@ -28,10 +28,7 @@ class UserController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             $tags = Tag::all();
-            return view('user-dashboard', compact('user'));
-        }
-        else {
-
+            return redirect()->route('user.dashboard', ['id' => $user->id])->with('message', 'You are now logged in!');
         }
     }
 
@@ -72,7 +69,7 @@ class UserController extends Controller
         'password' => 'required|string|min:8|confirmed',
     ]);
         $user = User::create($validatedData);
-        return redirect()->route('user.dashboard', ['id' => $user->id])->with('message', 'You are now logged in!');
+        return redirect()->route('showLogin')->with('message', 'Please re-enter credentials');
     }
 
     //LoginForm
@@ -83,9 +80,9 @@ class UserController extends Controller
         $user = Auth::user();
         //Check user type
         if ($user->user_type === 'normal') {
-            return redirect()->route('user.dashboard', ['id' => $user->id])->with('message', 'You are now logged in!'); //Admin login
+            return redirect()->route('user.dashboard', ['id' => $user->id])->with('message', 'You are now logged in!');
         } else {
-          return redirect()->route('showLogin')->with('message', 'These are admin credentials. Please use admin/login route'); //User Login
+          return redirect()->route('showLogin')->with('message', 'These are admin credentials. Please use admin/login route');
         }
     }
     return back()->withInput()->withErrors(['email' => 'Invalid email or password']);
