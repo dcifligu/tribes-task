@@ -116,8 +116,10 @@ Install FilamentPHP using Composer:
 `composer require filament/filament`
 Publish the configuration and assets:
 
-````php artisan vendor:publish --tag=filament-config
-php artisan vendor:publish --tag=filament-assets```
+```php artisan vendor:publish --tag=filament-config
+php artisan vendor:publish --tag=filament-assets
+```
+
 Set up your Filament resources, roles, and permissions in the config/filament.php configuration file.
 
 Access the Filament admin panel in your application by visiting the designated URL (usually /filament).
@@ -127,4 +129,3 @@ FilamentPHP simplifies the process of building and customizing admin panels for 
 By leveraging Livewire and FilamentPHP, you can enhance the interactivity and administration of your Laravel project.
 
 Make sure to customize this section with any specific setup or usage instructions that are relevant to your Laravel project. Additionally, consider providing links to the official documentation for both Livewire and FilamentPHP for more in-depth information.
-````
