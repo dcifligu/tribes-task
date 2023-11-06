@@ -77,10 +77,11 @@ To compile your CSS assets with Tailwind CSS, run the following command in your 
 
 ```
 npm run dev
+```
+
 This command will process your CSS files, including your Tailwind CSS configuration, and generate the compiled CSS files in your project.
 
 Make sure you have Node.js and npm installed on your system before running the command.
-```
 
 ## Using Livewire and FilamentPHP
 
