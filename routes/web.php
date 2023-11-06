@@ -16,7 +16,7 @@
     */
 
     Route::get('/', function () {
-        return redirect()->route('showRegistration');
+        return redirect()->route('showLogin');
     });
 
     //Dashboard routes
